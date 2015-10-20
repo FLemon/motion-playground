@@ -5,12 +5,16 @@ class JinSaysController < UIViewController
   outlet :pimpButton, UIButton
 
   def PimpIt(sender)
-    messageLabel.text = "pimped"
+    messageLabel.text = @messages.sample
   end
 
-  def viewDidLoad
-    super
-    NSLog("main: %@", messageLabel.text)
+  def viewDidAppear(animated)
+    AFMotion::JSON.get("https://jinthepimp.herokuapp.com/api/twits") do |response|
+      if response.success?
+        @messages = response.object["twitsCollection"]
+      else
+        @messages = ['Request failed, ckeck your internet connectivity']
+      end
+    end
   end
-
 end
