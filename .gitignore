@@ -16,3 +16,5 @@ nbproject
 .idea
 .dat*.*
 ib.xcodeproj
+*.mobileprovision
+env_variables.sh
