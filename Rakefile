@@ -9,6 +9,7 @@ rescue LoadError
 end
 
 Motion::Project::App.setup do |app|
+  app.version = '0.0.1'
   # integrate 3rd party framework
   app.vendor_project('vendor/Fabric.framework', :static, :products => ['Fabric'], :headers_dir => 'Headers')
   app.vendor_project('vendor/Crashlytics.framework', :static, :products => ['Crashlytics'], :headers_dir => 'Headers')
