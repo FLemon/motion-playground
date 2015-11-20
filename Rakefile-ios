@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
+
+begin
+  require 'bundler'
+  Bundler.require
+rescue LoadError
+end
+
+Motion::Project::App.setup do |app|
+  app.name = 'jinthepimp'
+  app.files += Dir.glob('./app/{ios,shared}/**/*.rb')
+  app.files += Dir.glob('./lib/**/*.rb')
+  app.resources_dirs = ['./resources/ios']
+  app.build_dir = './build/ios'
+  app.libs += ["/usr/lib/libz.dylib",
+               "/usr/lib/libc++.dylib"]
+  app.frameworks += ['Security',
+                     'SystemConfiguration']
+
+  app.development do
+    app.version = '2'
+    app.short_version = '0.0.1'
+    app.provisioning_profile = "./motionProfile.mobileprovision"
+    app.codesign_certificate = "iPhone Developer: Tristan Gadsby (JUZB672T5T)"
+    app.identifier = "com.alliants.jin.motion"
+  end
+
+  app.info_plist['Fabric'] = {
+    'APIKey' => ENV['FABRIC_API_KEY'],
+    'Kits' => [{
+      'KitInfo' => {
+        'consumerKey' => ENV['FABRIC_CONSUMER_KEY'],
+        'consumerSecret' => ENV['FABRIC_CONSUMER_SECRET']
+      },
+      'KitName' => 'Crashlytics'
+    }]
+  }
+
+  # integrate 3rd party framework
+  app.vendor_project('vendor/Fabric.framework', :static, :products => ['Fabric'], :headers_dir => 'Headers')
+  app.vendor_project('vendor/Crashlytics.framework', :static, :products => ['Crashlytics'], :headers_dir => 'Headers')
+end

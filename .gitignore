@@ -18,3 +18,5 @@ nbproject
 ib.xcodeproj
 *.mobileprovision
 env_variables.sh
+vendor/Pods
+vendor/build

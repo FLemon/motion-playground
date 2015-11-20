@@ -1,0 +1,22 @@
+# # -*- coding: utf-8 -*-
+# $:.unshift("/Library/RubyMotion/lib")
+# require 'motion/project/template/android'
+#
+# begin
+#   require 'bundler'
+#   Bundler.require
+# rescue LoadError
+# end
+#
+# Motion::Project::App.setup do |app|
+#   # Use `rake config' to see complete project settings.
+#   app.vendor_project :jar => 'vendor/volley-1.0.19.jar'
+#
+#   app.package = 'com.alliants.jin.motion'
+#   app.theme = '@android:style/Theme.Holo.Light'
+#   app.name = 'jinthepimp'
+#   app.api_version = '16'
+#   app.version_code = '1'
+#   app.version_name = '1.0.0'
+#   app.release_keystore(File.expand_path("./jin-the-pimp.keystore"), 'jinthepimp')
+# end
