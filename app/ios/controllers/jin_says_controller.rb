@@ -9,11 +9,10 @@ class JinSaysController < UIViewController
   end
 
   def viewDidAppear(animated)
+    @messages = ['Fetching...Be patient']
     AFMotion::JSON.get("https://jinthepimp.herokuapp.com/api/twits") do |response|
       if response.success?
         @messages = response.object["twitsCollection"]
-      else
-        @messages = ['Request failed, ckeck your internet connectivity']
       end
     end
   end
