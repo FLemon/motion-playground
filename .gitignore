@@ -17,6 +17,7 @@ nbproject
 .dat*.*
 ib.xcodeproj
 *.mobileprovision
+*.keystore
 env_variables.sh
 vendor/Pods
 vendor/build

@@ -10,8 +10,7 @@ end
 
 Motion::Project::App.setup do |app|
   app.name = 'jinthepimp'
-  app.files += Dir.glob('./app/{ios,shared}/**/*.rb')
-  app.files += Dir.glob('./lib/**/*.rb')
+  app.files -= Dir.glob('./app/android/**/*.rb')
   app.resources_dirs = ['./resources/ios']
   app.build_dir = './build/ios'
   app.libs += ["/usr/lib/libz.dylib",
