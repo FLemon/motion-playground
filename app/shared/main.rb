@@ -8,6 +8,6 @@ class Main < MainView
   end
 
   def get_message_sample
-    messageCollection.sample
+    messageLabel.text = messageCollection.sample
   end
 end

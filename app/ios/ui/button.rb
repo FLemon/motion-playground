@@ -1,7 +1,7 @@
 class Button
-  def initialize(text)
+  def initialize(text, &block)
     @text = text
-    # @on_tap_action = block if block
+    @on_tap_action = block if block
   end
 
   def outlet=(button_outlet)

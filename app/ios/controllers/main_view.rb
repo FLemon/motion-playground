@@ -5,8 +5,7 @@ class MainView < UIViewController
   outlet :pimpButtonOutlet, UIButton
 
   def PimpIt(sender)
-    # pimpButton.on_tap
-    messageLabel.text = 'hello'
+    pimpButton.on_tap
   end
 
   def viewDidAppear(animated)

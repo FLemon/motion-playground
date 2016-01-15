@@ -1,7 +1,7 @@
 class MessageCollection
   def initialize(collection=nil)
     @messages = collection || ['Fetching...Be patient']
-    sync
+    self.sync
   end
 
   def sample
