@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rhj-mn-iEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rhj-mn-iEd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Jin Says Controller-->
+        <!--Main-->
         <scene sceneID="hfs-ev-azs">
             <objects>
-                <viewController storyboardIdentifier="JinSaysController" id="rhj-mn-iEd" customClass="JinSaysController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JinSaysController" id="rhj-mn-iEd" customClass="Main" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i8B-C1-OUT"/>
                         <viewControllerLayoutGuide type="bottom" id="Xq8-8Z-LES"/>
@@ -18,14 +18,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pimp it, Jin has something to say" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlP-B9-LW8">
                                 <rect key="frame" x="20" y="20" width="335" height="394"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsn-aw-0AX">
                                 <rect key="frame" x="129" y="466" width="117" height="112"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Pimp it"/>
                                 <connections>
@@ -33,13 +31,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="messageLabel" destination="jlP-B9-LW8" id="kPy-2e-qze"/>
-                        <outlet property="pimpButton" destination="vsn-aw-0AX" id="OzE-65-PJS"/>
+                        <outlet property="messageLabelOutLet" destination="jlP-B9-LW8" id="O8u-RL-p4j"/>
+                        <outlet property="pimpButtonOutlet" destination="vsn-aw-0AX" id="x4l-ns-8LE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yil-OE-wuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
