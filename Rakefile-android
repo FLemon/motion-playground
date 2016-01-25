@@ -8,6 +8,7 @@ Motion::Project::App.setup do |app|
   app.files -= Dir.glob('./app/ios/**/*.rb')
   app.resources_dirs = ['./resources/android']
   app.build_dir = './build/android'
+  app.main_activity = 'Main'
 
   app.vendor_project :jar => 'vendor/volley-1.0.19.jar'
 
