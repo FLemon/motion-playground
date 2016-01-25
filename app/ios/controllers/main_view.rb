@@ -10,12 +10,8 @@ class MainView < UIViewController
 
   def viewDidAppear(animated)
     initialize
+
     assign_outlets_to_IB
-    AFMotion::JSON.get("https://jinthepimp.herokuapp.com/api/twits") do |response|
-      if response.success?
-        @messageCollection = response.object["twitsCollection"]
-      end
-    end
   end
 
   private
