@@ -1,7 +1,7 @@
 class MessageCollection
-  def initialize(collection=nil)
-    @messages = collection || ['Fetching...Be patient']
-    self.sync
+  def initialize(url='')
+    @url = url
+    @messages ||= ['Fetching...Be patient']
   end
 
   def sample
@@ -9,7 +9,7 @@ class MessageCollection
   end
 
   def sync
-    AFMotion::JSON.get("https://jinthepimp.herokuapp.com/api/twits") do |response|
+    AFMotion::JSON.get(@url) do |response|
       if response.success?
         @messages = response.object["twitsCollection"]
       end

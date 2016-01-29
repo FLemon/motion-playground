@@ -7,15 +7,15 @@ class MainView < Android::App::Activity
 
     assign_outlets
 
-    url = "https://jinthepimp.herokuapp.com/api/twits"
-    request = Com::Android::Volley::Toolbox::JsonObjectRequest.new(0, url, nil, RequestListener.new(messageCollection), nil)
     @requestQueue ||= Com::Android::Volley::Toolbox::Volley.newRequestQueue(self)
-    @requestQueue.add(request)
+    @requestQueue.add(messageCollection.sync)
   end
 
   def onClick(view)
     pimpButton.on_tap
   end
+
+  private
 
   def assign_outlets
     messageLabel.outlet = findViewById(R::Id::Message_label)
