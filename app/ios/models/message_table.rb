@@ -46,6 +46,7 @@ class MessageTable
   def alertView(alertView, clickedButtonAtIndex: indexPath)
     case alertView.buttonTitleAtIndex(indexPath)
     when UP_RATE
+
     when DOWN_RATE
     else
       alert = MessagePopup.new({
