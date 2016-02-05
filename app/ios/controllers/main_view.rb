@@ -1,25 +1,20 @@
 class MainView < UIViewController
   extend IB
 
-  outlet :messageLabelOutLet, UILabel
-  outlet :pimpButtonOutlet, UIButton
+  outlet :messageTableOutlet, UITableView
 
-  def viewDidAppear(animated)
+  def viewDidLoad
     initialize
-
-    assign_outlets
-
-    messageCollection.sync
   end
 
-  def PimpIt(sender)
-    pimpButton.on_tap
+  def viewDidAppear(animated)
+    assign_outlets
+    messageCollection.sync_and_update(messageTable)
   end
 
   private
 
   def assign_outlets
-    messageLabel.outlet = messageLabelOutLet
-    pimpButton.outlet = pimpButtonOutlet
+    messageTable.outlet = messageTableOutlet
   end
 end
