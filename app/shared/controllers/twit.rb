@@ -1,9 +1,9 @@
 class Twit < TwitView
-  attr_accessor :messageCollection, :messageTable
+  attr_accessor :twitsCollection, :twitsTable
 
   def initialize
     @apiService = ApiService.new
-    @messageCollection = MessageCollection.new("https://jinthepimp.herokuapp.com/api/twits")
-    @messageTable = MessageTable.new(@messageCollection.messages)
+    @twitsCollection = TwitsCollection.new()
+    @twitsTable = TwitsTable.new(@twitsCollection.twits)
   end
 end

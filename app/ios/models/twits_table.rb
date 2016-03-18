@@ -1,4 +1,4 @@
-class MessageTable
+class TwitsTable
   UP_RATE = 'Like it'
   DOWN_RATE = 'Hmmm...'
 
@@ -36,7 +36,7 @@ class MessageTable
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-    alert = MessagePopup.new({
+    alert = BasicPopup.new({
       delegate: self,
       message: @table_data[indexPath.row],
       buttons: [UP_RATE, DOWN_RATE]
@@ -50,8 +50,8 @@ class MessageTable
 
     when DOWN_RATE
     else
-      alert = MessagePopup.new({
-        message:  "unhandled button click: #{alertView.buttonTitleAtIndex(indexPath)}",
+      alert = twitsPopup.new({
+        twits:  "unhandled button click: #{alertView.buttonTitleAtIndex(indexPath)}",
         buttons: ["OK"]
       })
       alert.show

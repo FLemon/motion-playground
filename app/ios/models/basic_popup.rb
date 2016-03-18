@@ -1,4 +1,4 @@
-class MessagePopup
+class BasicPopup
   def initialize(options={})
     @outlet = UIAlertView.alloc.init
     self.delegate = options[:delegate] if options[:delegate]

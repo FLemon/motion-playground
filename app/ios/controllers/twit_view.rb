@@ -16,12 +16,12 @@ class TwitView < UITableViewController
   private
 
   def assign_outlets
-    messageTable.outlet = self.tableView
+    twitsTable.outlet = self.tableView
   end
 
   def sync_data
-    messageCollection.fetch do |messages|
-      messageTable.reload_with_data(messages)
+    twitsCollection.fetch do |twits|
+      twitsTable.reload_with_data(twits)
       self.refreshControl.endRefreshing
     end
   end
