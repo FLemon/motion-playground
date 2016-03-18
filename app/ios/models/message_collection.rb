@@ -16,10 +16,10 @@ class MessageCollection
     @messages
   end
 
-  def sync_and_update(table)
+  def fetch(&block)
     ApiService.get_messages do |messages|
       @messages = messages
-      table.reload_with_data(@messages)
+      block.call(@messages)
     end
   end
 end

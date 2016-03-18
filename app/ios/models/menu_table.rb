@@ -1,7 +1,4 @@
-class MessageTable
-  UP_RATE = 'Like it'
-  DOWN_RATE = 'Hmmm...'
-
+class MenuTable
   def initialize(tableData)
     @table_data = tableData
   end
@@ -13,13 +10,17 @@ class MessageTable
     @outlet.reloadData
   end
 
+  def view=(view)
+    @view = WeakRef.new(view)
+  end
+
   def reload_with_data(value)
     @table_data = value
     @outlet.reloadData
   end
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
-    reuseIdentifier ||= 'CELL_IDENTIFIER'
+    reuseIdentifier ||= 'menu_cell'
 
     cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) ||
       UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: reuseIdentifier)
@@ -33,28 +34,11 @@ class MessageTable
     @table_data.count
   end
 
-  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-    alert = MessagePopup.new({
-      delegate: self,
-      message: @table_data[indexPath.row],
-      buttons: [UP_RATE, DOWN_RATE]
-    })
-    alert.show
-  end
-
-  def alertView(alertView, clickedButtonAtIndex: indexPath)
-    case alertView.buttonTitleAtIndex(indexPath)
-    when UP_RATE
-
-    when DOWN_RATE
+  def tableView(tableView, didSelectRowAtIndexPath: indexPath)
+    if @table_data[indexPath.row] == 'Twits'
+      @view.performSegueWithIdentifier('twitSegue', sender: self)
     else
-      alert = MessagePopup.new({
-        message:  "unhandled button click: #{alertView.buttonTitleAtIndex(indexPath)}",
-        buttons: ["OK"]
-      })
-      alert.show
+      @view.performSegueWithIdentifier('blogSegue', sender: self)
     end
   end
 end

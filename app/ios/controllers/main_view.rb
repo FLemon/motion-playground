@@ -1,7 +1,7 @@
 class MainView < UIViewController
   extend IB
 
-  outlet :messageTableOutlet, UITableView
+  outlet :menuTableOutlet, UITableView
 
   def viewDidLoad
     initialize
@@ -9,12 +9,12 @@ class MainView < UIViewController
 
   def viewDidAppear(animated)
     assign_outlets
-    messageCollection.sync_and_update(messageTable)
+    menuTable.view = self
   end
 
   private
 
   def assign_outlets
-    messageTable.outlet = messageTableOutlet
+    menuTable.outlet = menuTableOutlet
   end
 end

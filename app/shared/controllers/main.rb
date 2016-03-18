@@ -1,9 +1,7 @@
 class Main < MainView
-  attr_accessor :messageCollection, :messageTable
+  attr_accessor :menuTable
 
   def initialize
-    @apiService = ApiService.new
-    @messageCollection = MessageCollection.new("https://jinthepimp.herokuapp.com/api/twits")
-    @messageTable = MessageTable.new(@messageCollection.messages)
+    @menuTable = MenuTable.new(['Twits', 'Blogs'])
   end
 end
