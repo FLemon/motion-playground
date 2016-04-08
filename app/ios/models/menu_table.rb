@@ -3,15 +3,15 @@ class MenuTable
     @table_data = tableData
   end
 
-  def outlet=(label_outlet)
-    @outlet = WeakRef.new(label_outlet)
+  def outlet=(table_outlet)
+    @outlet = WeakRef.new(table_outlet)
     @outlet.dataSource = self
     @outlet.delegate = self
     @outlet.reloadData
   end
 
-  def view=(view)
-    @view = WeakRef.new(view)
+  def parent=(view)
+    @parent = WeakRef.new(view)
   end
 
   def reload_with_data(value)
@@ -36,9 +36,9 @@ class MenuTable
 
   def tableView(tableView, didSelectRowAtIndexPath: indexPath)
     if @table_data[indexPath.row] == 'Twits'
-      @view.performSegueWithIdentifier('twitSegue', sender: self)
+      @parent.performSegueWithIdentifier('twitSegue', sender: self)
     else
-      @view.performSegueWithIdentifier('blogSegue', sender: self)
+      @parent.performSegueWithIdentifier('blogSegue', sender: self)
     end
   end
 end

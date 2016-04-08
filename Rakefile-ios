@@ -18,12 +18,17 @@ Motion::Project::App.setup do |app|
   app.frameworks += ['Security',
                      'SystemConfiguration']
 
+  app.pods do
+    pod 'MMMarkdown'
+  end
+
   app.development do
     app.version = '2'
-    app.short_version = '0.0.1'
+    app.short_version = '0.2.0'
     app.provisioning_profile = "./motionProfile.mobileprovision"
     app.codesign_certificate = "iPhone Developer: Tristan Gadsby (JUZB672T5T)"
     app.identifier = "com.alliants.jin.motion"
+    app.info_plist['NSAppTransportSecurity'] = { 'NSAllowsArbitraryLoads' => true }
   end
 
   app.info_plist['Fabric'] = {

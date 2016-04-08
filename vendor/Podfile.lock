@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MMMarkdown (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - MMMarkdown
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  MMMarkdown: 06f7989e0350d10a7de50516af6c812402ce554b
 
 COCOAPODS: 0.39.0

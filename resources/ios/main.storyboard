@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MCN-LA-Gg4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MCN-LA-Gg4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--JinThePimp-->
         <scene sceneID="irr-D7-lRp">
             <objects>
-                <navigationController id="MCN-LA-Gg4" sceneMemberID="viewController">
+                <navigationController title="JinThePimp" id="MCN-LA-Gg4" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tV1-DM-8Yn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -21,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="194.40000000000001" y="-208.74000000000001"/>
         </scene>
-        <!--Main-->
+        <!--JinThePimp-->
         <scene sceneID="5Fw-mm-JfN">
             <objects>
-                <viewController id="IVF-Zb-1lj" customClass="Main" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IVF-Zb-1lj" customClass="Main" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yyp-LJ-cQc"/>
                         <viewControllerLayoutGuide type="bottom" id="Vsp-YV-Ki9"/>
@@ -38,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menu_cell" textLabel="wkk-fw-tZj" style="IBUITableViewCellStyleDefault" id="Xiq-MR-sY9">
-                                        <rect key="frame" x="0.0" y="92" width="335" height="69"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xiq-MR-sY9" id="KQB-SF-Odo">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="69"/>
@@ -59,7 +60,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Clr-oz-Yz2"/>
+                    <navigationItem key="navigationItem" title="JinThePimp" id="Clr-oz-Yz2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuTableOutlet" destination="KtY-5g-Y27" id="FSM-DW-VH2"/>
@@ -74,7 +75,7 @@
         <!--Twit-->
         <scene sceneID="dKR-oq-v3y">
             <objects>
-                <tableViewController id="J3e-lE-yQZ" customClass="Twit" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="J3e-lE-yQZ" customClass="Twit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gvc-NX-R0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1596.5" y="-225.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Blog-->
         <scene sceneID="fEi-ru-XoL">
             <objects>
-                <viewController id="7tK-cJ-oRL" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7tK-cJ-oRL" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YkV-Q7-oTV"/>
                         <viewControllerLayoutGuide type="bottom" id="0Qe-jg-Jfh"/>
@@ -111,19 +112,101 @@
                     <view key="view" contentMode="scaleToFill" id="5Im-AA-OO9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-T6-7WD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="kEQ-QO-fFW" kind="embed" id="O55-8t-8KN"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Qe-jg-Jfh" firstAttribute="top" secondItem="ZhO-T6-7WD" secondAttribute="bottom" id="W0T-8V-r2m"/>
+                            <constraint firstItem="ZhO-T6-7WD" firstAttribute="top" secondItem="YkV-Q7-oTV" secondAttribute="bottom" id="gAu-bX-cNK"/>
+                            <constraint firstItem="ZhO-T6-7WD" firstAttribute="leading" secondItem="5Im-AA-OO9" secondAttribute="leading" id="o6J-Ae-kzh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZhO-T6-7WD" secondAttribute="trailing" id="xi8-3d-RML"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G3J-5k-JCP"/>
+                    <navigationItem key="navigationItem" title="Blog" id="G3J-5k-JCP"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7t-Uu-IMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131.5" y="-982.5"/>
+            <point key="canvasLocation" x="1131.5" y="-996.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Blog-->
+        <scene sceneID="St5-fC-8xk">
+            <objects>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="kEQ-QO-fFW" customClass="Blog" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9D9-0J-NWo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Fq-nf-xFQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Fq-nf-xFQ" id="OCQ-LV-txB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kEQ-QO-fFW" id="u9H-Kr-BoB"/>
+                            <outlet property="delegate" destination="kEQ-QO-fFW" id="oFH-nh-RKW"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="p8f-31-Crt" kind="push" identifier="blogDetailsSegue" id="5be-pe-niJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IlJ-BH-h6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1603.5" y="-996"/>
+        </scene>
+        <!--Blog Detail-->
+        <scene sceneID="z2D-un-vQ6">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="p8f-31-Crt" customClass="BlogDetail" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0X2-JX-Tc2"/>
+                        <viewControllerLayoutGuide type="bottom" id="6cm-3b-38b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dgv-vQ-of0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bag-mf-Bgh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bag-mf-Bgh" firstAttribute="leading" secondItem="dgv-vQ-of0" secondAttribute="leading" id="3rR-Kv-v6E"/>
+                            <constraint firstAttribute="trailing" secondItem="bag-mf-Bgh" secondAttribute="trailing" id="NWA-Ri-evr"/>
+                            <constraint firstItem="bag-mf-Bgh" firstAttribute="top" secondItem="0X2-JX-Tc2" secondAttribute="bottom" id="fSG-Jk-QB5"/>
+                            <constraint firstItem="6cm-3b-38b" firstAttribute="top" secondItem="bag-mf-Bgh" secondAttribute="bottom" id="uu5-CM-DQ8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eY7-8f-t5m"/>
+                    <connections>
+                        <outlet property="blogBodyTextViewOutlet" destination="bag-mf-Bgh" id="llQ-4v-4b6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DI7-8E-RrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="-1001"/>
+        </scene>
+        <!--ShitJinSays-->
         <scene sceneID="pk0-4E-qDG">
             <objects>
-                <viewController id="GnW-wq-lei" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GnW-wq-lei" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v4p-lu-GbH"/>
                         <viewControllerLayoutGuide type="bottom" id="vDU-6i-v0D"/>
@@ -132,16 +215,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYu-oI-7K4">
-                                <rect key="frame" x="0.0" y="79" width="375" height="510"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYu-oI-7K4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="J3e-lE-yQZ" kind="embed" id="V0V-FY-Tln"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GYu-oI-7K4" secondAttribute="trailing" constant="19" id="Bz9-mO-RhA"/>
+                            <constraint firstItem="GYu-oI-7K4" firstAttribute="top" secondItem="v4p-lu-GbH" secondAttribute="bottom" id="DUu-2v-hZL"/>
+                            <constraint firstItem="vDU-6i-v0D" firstAttribute="top" secondItem="GYu-oI-7K4" secondAttribute="bottom" constant="71" id="Wvi-jq-vVF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="GYu-oI-7K4" secondAttribute="leading" id="lFb-YW-0a5"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pPK-Uk-FTq"/>
+                    <navigationItem key="navigationItem" title="ShitJinSays" id="pPK-Uk-FTq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLI-JK-BKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

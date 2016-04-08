@@ -1,7 +1,4 @@
-class TwitsTable
-  UP_RATE = 'Like it'
-  DOWN_RATE = 'Hmmm...'
-
+class BlogsTable
   def initialize(tableData)
     @table_data = tableData
   end
@@ -11,6 +8,10 @@ class TwitsTable
     @outlet.dataSource = self
     @outlet.delegate = self
     @outlet.reloadData
+  end
+
+  def parent=(view)
+    @parent = WeakRef.new(view)
   end
 
   def reload_with_data(value)
@@ -24,7 +25,12 @@ class TwitsTable
     cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) ||
       UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: reuseIdentifier)
 
-    cell.textLabel.text = @table_data[indexPath.row]
+    cell_data = @table_data[indexPath.row]
+    cell.textLabel.text = if cell_data.respond_to?(:fetch)
+                            @table_data[indexPath.row].fetch('title')
+                          else
+                            @table_data[indexPath.row]
+                          end
 
     cell
   end
@@ -34,27 +40,9 @@ class TwitsTable
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-    alert = BasicPopup.new({
-      delegate: self,
-      message: @table_data[indexPath.row],
-      buttons: [UP_RATE, DOWN_RATE]
-    })
-    alert.show
-  end
-
-  def alertView(alertView, clickedButtonAtIndex: indexPath)
-    case alertView.buttonTitleAtIndex(indexPath)
-    when UP_RATE
-
-    when DOWN_RATE
-    else
-      alert = twitsPopup.new({
-        twits:  "unhandled button click: #{alertView.buttonTitleAtIndex(indexPath)}",
-        buttons: ["OK"]
-      })
-      alert.show
+    @selected_blog = @table_data[indexPath.row]
+    if @selected_blog.respond_to?(:fetch)
+      @parent.performSegueWithIdentifier('blogDetailsSegue', sender: @selected_blog)
     end
   end
 end

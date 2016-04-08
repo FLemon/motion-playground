@@ -3,10 +3,6 @@ class TwitsCollection
     @twits ||= ['Fetching...Be patient']
   end
 
-  def sample
-    @twits.sample
-  end
-
   def count
     @twits.count
   end

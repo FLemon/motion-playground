@@ -1,7 +1,7 @@
-class MainView < UIViewController
+class BlogDetailView < UIViewController
   extend IB
 
-  outlet :menuTableOutlet, UITableView
+  outlet :blogBodyTextViewOutlet, UITextView
 
   def viewDidLoad
     initialize
@@ -9,12 +9,11 @@ class MainView < UIViewController
 
   def viewDidAppear(animated)
     assign_outlets
-    menuTable.parent = self
   end
 
   private
 
   def assign_outlets
-    menuTable.outlet = menuTableOutlet
+    blog_body_text_view.outlet = blogBodyTextViewOutlet
   end
 end
