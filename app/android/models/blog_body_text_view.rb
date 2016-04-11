@@ -1,0 +1,2 @@
+class BlogBodyTextView
+end

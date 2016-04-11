@@ -1,0 +1,2 @@
+class TwitsTable
+end
