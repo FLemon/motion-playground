@@ -6,6 +6,7 @@ class RequestListener
   end
 
   def onResponse(json)
-    @obj.setMessage(json)
+    p 'listener'
+    obj.reload_with_data(json.getJSONArray('twitsCollection'))
   end
 end

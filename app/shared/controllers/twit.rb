@@ -3,7 +3,7 @@ class Twit < TwitView
 
   def initialize
     @apiService = ApiService.new
-    @twitsCollection = TwitsCollection.new()
+    @twitsCollection = TwitsCollection.new
     @twitsTable = TwitsTable.new(@twitsCollection.twits)
   end
 end

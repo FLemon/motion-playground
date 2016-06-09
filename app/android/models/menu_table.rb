@@ -5,13 +5,27 @@ class MenuTable
 
   def outlet=(table_outlet)
     @outlet = table_outlet
+    setup
   end
 
   def parent=(parent)
     @parent = parent
   end
 
-  def set_adapter
+  def onItemClick(list, view, position, id)
+    intent = if list.getItemAtPosition(position) == 'Twits'
+               Android::Content::Intent.new(@parent, Twit);
+             else
+               Android::Content::Intent.new(@parent, BlogView);
+             end
+    @parent.startActivity(intent);
+  end
+
+  private
+
+  def setup
+    @outlet.onItemClickListener = self
+    @outlet.choiceMode = Android::Widget::AbsListView::CHOICE_MODE_SINGLE
     @outlet.adapter = MenuAdapter.new(
       @parent,
       Android::R::Layout::Simple_list_item_1,
