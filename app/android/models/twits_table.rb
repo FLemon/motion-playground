@@ -13,18 +13,14 @@ class TwitsTable
   end
 
   def onItemClick(list, view, position, id)
-    # alert = Android::App::AlertDialog.new(@parent, Android::App::AlertDialog::THEME_HOLO_LIGHT)
-    # alert.setMessage(list.getItemAtPosition(position))
-    # alert.show
+    alert = Android::App::AlertDialog.new(@parent, Android::App::AlertDialog::THEME_HOLO_LIGHT)
+    alert.setMessage(list.getItemAtPosition(position))
+    alert.show
   end
 
-  def reload_with_data(value)
+  def reload_with_data(data_array)
     @outlet.adapter.clear
-    @table_data = (0..value.length-1).map do |index|
-      twit = value.getString(index)
-      @outlet.adapter.add(twit)
-      twit
-    end
+    data_array.map { |t| @outlet.adapter.add(t) }
     @outlet.adapter.notifyDataSetChanged
   end
 
@@ -45,6 +41,9 @@ class TwitAdapter < Android::Widget::ArrayAdapter
   def getView(position, convertView, parent)
     textView = Android::Widget::TextView.new(context)
     textView.text = self.getItem(position)
+    textView.setSingleLine(true)
+    textView.setPadding(20,20,20,20)
+    textView.setEllipsize(Android::Text::TextUtils::TruncateAt::END)
 
     layout = Android::Widget::LinearLayout.new(context)
     layout.addView(
@@ -52,7 +51,7 @@ class TwitAdapter < Android::Widget::ArrayAdapter
       Android::Widget::LinearLayout::LayoutParams.new(
         Android::View::ViewGroup::LayoutParams::MATCH_PARENT,
         Android::View::ViewGroup::LayoutParams::WRAP_CONTENT
-      )
+    )
     )
 
     layout

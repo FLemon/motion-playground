@@ -16,9 +16,10 @@ class TwitView < Android::App::Activity
   end
 
   def sync_data
-    twitsCollection.fetch(twitsTable)
-    # do |twits|
-    #   twitsTable.reload_with_data(twits)
-    # end
+    # twitsCollection.fetch(twitsTable)
+    TwitsCollection.fetch do |twits|
+      p 'got the twits'
+      twitsTable.reload_with_data(twits)
+    end
   end
 end
