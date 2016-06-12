@@ -38,6 +38,7 @@ class MenuAdapter < Android::Widget::ArrayAdapter
   def getView(position, convertView, parent)
     textView = Android::Widget::TextView.new(context)
     textView.text = self.getItem(position)
+    textView.setGravity(Android::View::Gravity::CENTER)
 
     layout = Android::Widget::LinearLayout.new(context)
     layout.addView(
