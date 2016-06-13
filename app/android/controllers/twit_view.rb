@@ -7,7 +7,7 @@ class TwitView < Android::App::Activity
 
     assign_outlets
     @requestQueue ||= Com::Android::Volley::Toolbox::Volley.newRequestQueue(self)
-    @requestQueue.add(sync_data)
+    @requestQueue.add(sync_data) if TwitsCollection.empty?
   end
 
   def assign_outlets
@@ -16,9 +16,7 @@ class TwitView < Android::App::Activity
   end
 
   def sync_data
-    # twitsCollection.fetch(twitsTable)
     TwitsCollection.fetch do |twits|
-      p 'got the twits'
       twitsTable.reload_with_data(twits)
     end
   end

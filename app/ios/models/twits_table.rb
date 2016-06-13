@@ -4,6 +4,7 @@ class TwitsTable
 
   def initialize(tableData)
     @table_data = tableData
+    @table_data = ['Fetching...Be patient'] if @table_data.empty?
   end
 
   def outlet=(table_outlet)

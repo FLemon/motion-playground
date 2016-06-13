@@ -1,17 +1,16 @@
 class TwitsCollection
-  TWITS_PLACEHOLDER = ['Fetching...Be patient']
-  @@twits ||= TWITS_PLACEHOLDER
+  @@twits ||= []
 
   def self.count
     @@twits.count
   end
 
   def self.twits
-    @@twits ||= TWITS_PLACEHOLDER
+    @@twits
   end
 
   def self.empty?
-    @@twits == TWITS_PLACEHOLDER
+    @@twits.empty?
   end
 
   def self.assign_json_array(json)
@@ -23,12 +22,8 @@ class TwitsCollection
   end
 
   def self.fetch(&block)
-    if empty?
-      ApiService.get_twits do |twits|
-        block.call(assign_json_array(twits))
-      end
-    else
-      block.call(@@twits)
+    ApiService.get_twits do |twits|
+      block.call(assign_json_array(twits))
     end
   end
 end

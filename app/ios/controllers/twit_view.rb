@@ -20,7 +20,7 @@ class TwitView < UITableViewController
   end
 
   def sync_data
-    twitsCollection.fetch do |twits|
+    TwitsCollection.fetch do |twits|
       twitsTable.reload_with_data(twits)
       self.refreshControl.endRefreshing
     end

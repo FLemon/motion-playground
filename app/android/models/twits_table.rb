@@ -32,7 +32,7 @@ class TwitsTable
     @outlet.adapter = TwitAdapter.new(
       @parent,
       Android::R::Layout::Simple_list_item_1,
-      @table_data
+      @table_data.empty? ? ['Fetching...Be patient'] : @table_data
     )
   end
 end

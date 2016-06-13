@@ -1,20 +1,17 @@
 class TwitsCollection
-  def initialize
-    @twits ||= ['Fetching...Be patient']
+  @@twits ||= []
+  def self.count
+    @@twits.count
   end
 
-  def count
-    @twits.count
+  def self.twits
+    @@twits
   end
 
-  def twits
-    @twits
-  end
-
-  def fetch(&block)
+  def self.fetch(&block)
     ApiService.get_twits do |twits|
-      @twits = twits
-      block.call(@twits)
+      @@twits = twits
+      block.call(@@twits)
     end
   end
 end
