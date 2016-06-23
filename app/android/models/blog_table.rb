@@ -37,7 +37,7 @@ class BlogsTable
     @outlet.adapter = BlogAdapter.new(
       @parent,
       Android::R::Layout::Simple_list_item_1,
-      @table_data.empty? ? ['Fetching...Be patient'] : @table_data
+      @table_data.length == 0 ? ['Fetching...Be patient'] : (0..@table_data.length-1).map { |index| @table_data.getJSONObject(index) }
     )
   end
 end

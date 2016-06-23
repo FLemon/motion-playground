@@ -10,15 +10,11 @@ class BlogsCollection
   end
 
   def self.empty?
-    @@blogs.empty?
+    @@blogs.length == 0
   end
 
   def self.assign_json_array(json)
     @@blogs = json.getJSONArray('blogsCollection')
-
-    # @@blogs = (0..json_array.length-1).map do |index|
-    #   json_array.getString(index)
-    # end
   end
 
   def self.fetch(&block)
