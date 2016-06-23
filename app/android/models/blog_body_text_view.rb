@@ -5,6 +5,7 @@ class BlogBodyTextView
 
 	def outlet=(text_view_outlet)
 		@outlet = text_view_outlet
+    @outlet.setMovementMethod(Android::Text::Method::ScrollingMovementMethod.new)
 	end
 
 	def text=(text)
