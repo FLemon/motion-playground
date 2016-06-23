@@ -9,8 +9,7 @@ Motion::Project::App.setup do |app|
   app.resources_dirs = ['./resources/android']
   app.build_dir = './build/android'
   app.main_activity = 'Main'
-  app.sub_activities = ['Twit']
-
+  app.sub_activities = ['Twit', 'Blog', 'BlogDetail']
   app.vendor_project :jar => 'vendor/volley-1.0.19.jar'
 
   app.icon = 'ic_launcher'

@@ -6,7 +6,7 @@ class RequestListener
   end
 
   def onResponse(json)
-    p 'twits downloaded'
+    p 'json data downloaded'
     obj.call(json)
   end
 end

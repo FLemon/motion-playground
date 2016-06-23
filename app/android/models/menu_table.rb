@@ -16,7 +16,7 @@ class MenuTable
     intent = if list.getItemAtPosition(position) == 'Twits'
                Android::Content::Intent.new(@parent, Twit);
              else
-               Android::Content::Intent.new(@parent, BlogView);
+               Android::Content::Intent.new(@parent, Blog);
              end
     @parent.startActivity(intent);
   end

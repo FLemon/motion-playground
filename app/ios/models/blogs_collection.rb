@@ -1,20 +1,18 @@
 class BlogsCollection
-  def initialize
-    @blogs ||= ['Fetching...Be patient']
+  @@blogs ||= []
+
+  def self.count
+    @@blogs.count
   end
 
-  def count
-    @blogs.count
+  def self.blogs
+    @@blogs
   end
 
-  def blogs
-    @blogs
-  end
-
-  def fetch(&block)
+  def self.fetch(&block)
     ApiService.get_blogs do |blogs|
-      @blogs = blogs
-      block.call(@blogs)
+      @@blogs = blogs
+      block.call(@@blogs)
     end
   end
 end

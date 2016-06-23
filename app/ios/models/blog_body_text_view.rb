@@ -1,5 +1,6 @@
 class BlogBodyTextView
   def initialize(text)
+    text = text.fetch('body')
     html_text = MMMarkdown.HTMLStringWithMarkdown(text, extensions: MMMarkdownExtensionsGitHubFlavored, error: nil)
     html_text = html_text.stringByAppendingString("<style>body{font-family: HelveticaNeue-Light; font-size:14pt;}</style>")
     parsed_text = NSMutableAttributedString.new.initWithData(

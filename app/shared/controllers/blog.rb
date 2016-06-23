@@ -1,9 +1,8 @@
 class Blog < BlogView
-  attr_accessor :blogsCollection, :blogsTable
+  attr_accessor :blogsTable
 
   def initialize
     @apiService = ApiService.new
-    @blogsCollection = BlogsCollection.new
-    @blogsTable = BlogsTable.new(@blogsCollection.blogs)
+    @blogsTable = BlogsTable.new(BlogsCollection.blogs)
   end
 end

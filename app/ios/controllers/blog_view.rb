@@ -28,7 +28,7 @@ class BlogView < UITableViewController
   end
 
   def sync_data
-    blogsCollection.fetch do |blogs|
+    BlogsCollection.fetch do |blogs|
       blogsTable.reload_with_data(blogs)
       self.refreshControl.endRefreshing
     end

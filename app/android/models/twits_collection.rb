@@ -17,7 +17,7 @@ class TwitsCollection
     json_array = json.getJSONArray('twitsCollection')
 
     @@twits = (0..json_array.length-1).map do |index|
-      twit = json_array.getString(index)
+      json_array.getString(index)
     end
   end
 
