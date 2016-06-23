@@ -8,6 +8,10 @@ class BlogBodyTextView
 	end
 
 	def text=(text)
-		@outlet.text = text
+    markdown_parser = Org::Commonmark::Parser::Parser.builder.build
+    doc = markdown_parser.parse(text)
+    renderer = Org::Commonmark::Html::HtmlRenderer.builder.build
+    parsed_text = renderer.render(doc)
+    @outlet.text = Android::Text::Html.fromHtml(parsed_text)
 	end
 end

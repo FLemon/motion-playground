@@ -11,6 +11,7 @@ Motion::Project::App.setup do |app|
   app.main_activity = 'Main'
   app.sub_activities = ['Twit', 'Blog', 'BlogDetail']
   app.vendor_project :jar => 'vendor/volley-1.0.19.jar'
+  app.vendor_project :jar => 'vendor/commonmark-0.5.1.jar'
 
   app.icon = 'ic_launcher'
   app.package = 'com.alliants.jin.motion'
