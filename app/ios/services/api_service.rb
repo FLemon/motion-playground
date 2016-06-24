@@ -1,5 +1,5 @@
 class ApiService
-  API_HOST = "https://jinthepimp.herokuapp.com"
+  API_HOST = "https://pin-sensation.herokuapp.com"
   TWITS_URL = API_HOST + '/api/twits'
   BLOGS_URL = API_HOST + '/api/git/issues'
 

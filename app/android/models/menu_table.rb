@@ -39,6 +39,7 @@ class MenuAdapter < Android::Widget::ArrayAdapter
     textView = Android::Widget::TextView.new(context)
     textView.text = self.getItem(position)
     textView.setGravity(Android::View::Gravity::CENTER)
+    textView.textSize = 40
 
     layout = Android::Widget::LinearLayout.new(context)
     layout.addView(

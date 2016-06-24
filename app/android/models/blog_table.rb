@@ -51,6 +51,7 @@ class BlogAdapter < Android::Widget::ArrayAdapter
     textView.setSingleLine(true)
     textView.setPadding(20,20,20,20)
     textView.setEllipsize(Android::Text::TextUtils::TruncateAt::END)
+    textView.textSize = 15
 
     layout = Android::Widget::LinearLayout.new(context)
     layout.addView(

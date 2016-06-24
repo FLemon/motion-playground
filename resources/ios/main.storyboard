@@ -5,10 +5,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--JinThePimp-->
         <scene sceneID="irr-D7-lRp">
             <objects>
-                <navigationController title="JinThePimp" id="MCN-LA-Gg4" sceneMemberID="viewController">
+                <navigationController title="PinSensation" id="MCN-LA-Gg4" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tV1-DM-8Yn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -22,7 +21,6 @@
             </objects>
             <point key="canvasLocation" x="194.40000000000001" y="-208.74000000000001"/>
         </scene>
-        <!--JinThePimp-->
         <scene sceneID="5Fw-mm-JfN">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="IVF-Zb-1lj" customClass="Main" sceneMemberID="viewController">
@@ -60,7 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="JinThePimp" id="Clr-oz-Yz2"/>
+                    <navigationItem key="navigationItem" title="PinSensation" id="Clr-oz-Yz2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuTableOutlet" destination="KtY-5g-Y27" id="FSM-DW-VH2"/>

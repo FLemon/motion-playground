@@ -4,7 +4,7 @@ require 'motion/project/template/android'
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'jinthepimp'
+  app.name = 'pin-sensation'
   app.files -= Dir.glob('./app/ios/**/*.rb')
   app.resources_dirs = ['./resources/android']
   app.build_dir = './build/android'
@@ -17,11 +17,11 @@ Motion::Project::App.setup do |app|
   app.package = 'com.alliants.jin.motion'
   app.theme = '@android:style/Theme.Holo.Light'
   app.api_version = '16'
-  app.version_code = '4'
-  app.version_name = '2.0.0'
+  app.version_code = '5'
+  app.version_name = '2.1.0'
   app.permissions = [:internet]
 
   if app.release?
-    app.release_keystore(File.expand_path("./jin-the-pimp.keystore"), 'jinthepimp')
+    app.release_keystore(File.expand_path("./pin-sensation.keystore"), 'pin-sensation')
   end
 end

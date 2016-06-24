@@ -1,4 +1,4 @@
-describe "Application 'jinthepimp'" do
+describe "Application 'pin sensation'" do
   before do
     @app = UIApplication.sharedApplication
   end

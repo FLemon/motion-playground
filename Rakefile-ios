@@ -9,7 +9,7 @@ rescue LoadError
 end
 
 Motion::Project::App.setup do |app|
-  app.name = 'jinthepimp'
+  app.name = 'pin-sensation'
   app.files -= Dir.glob('./app/android/**/*.rb')
   app.resources_dirs = ['./resources/ios']
   app.build_dir = './build/ios'
