@@ -17,7 +17,7 @@ Motion::Project::App.setup do |app|
   app.package = 'com.alliants.jin.motion'
   app.theme = '@android:style/Theme.Holo.Light'
   app.api_version = '16'
-  app.version_code = '5'
+  app.version_code = '6'
   app.version_name = '2.1.0'
   app.permissions = [:internet]
 
